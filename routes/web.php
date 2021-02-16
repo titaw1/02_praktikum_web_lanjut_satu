@@ -14,12 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 /*** Praktikum 1 */
- Route::get('/', function () {
-     echo "Selamat Datang";
- });
- Route::get('/about', function () {
-     echo "Nama : Tita Wijayanti, Nim : 1941720053";
- });
- Route::get('/articles/{id}', function ($id) {
-     return 'Halaman Artikel dengan id '.$id;
- });
+// Route::get('/', function () {
+//     echo "Selamat Datang";
+// });
+// Route::get('/about', function () {
+//     echo "Nama : Tita Wijayanti, Nim : 1941720053";
+// });
+// Route::get('/articles/{id}', function ($id) {
+//     return 'Halaman Artikel dengan id '.$id;
+// });
+
+/***Praktikum 2 */
+Route::get('/',  [PageController::class,'index']);
+Route::get('/about',  [PageController::class,'about']);
+Route::get('/articles/{id}',  [PageController::class,'articles']);
